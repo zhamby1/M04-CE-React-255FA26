@@ -2,32 +2,40 @@
 import './App.css';
 
 
-//we can take in a number of properties using the props keyword
-//props allow us to use the jsx in the return statement to determine what the property will be called
-//props are nice because they allow us to use any number of arguments to render out the component
-function Greeting(props){
-  return(    
-      <p>Hello my name is {props.name} and my age is {props.age}</p>
-      
-  )
-}
+//we are going to create a component made up of other components (component composition)
+//we are going to make a movie review component that will be made up of its own internal reviews and a star rating
+//the star rating will be a separate component we use and we will use that in the Review component
 
-//you can also use exact prop names if you dont want to just use props and define the in the function body
-function Goodbye({name}){
+function Rating(props){
   return(
-    <p>Goodbye, {name}</p>
+    <div>
+      {props.stars} / 5 stars
+    </div>
   )
 }
 
+function Review(props){
+  return(
+    <div>
+      <h2>
+        Review by {props.username}
+      </h2>
+      <p>
+        <Rating stars={props.rating} />
+      </p>
+      <p>
+        {props.text}
+      </p>
+    </div>
+  )
+}
 
 function App(){
   //if passing numerical data surround it in the brackets
   return(
     <>
-    
-      <Greeting name="Tim" age={8}  />
-      <Goodbye name={"James"} />
-      
+      <Review username="Zach" rating={5} text="Vison Quest was a great show in the MCU" />
+      <Review username="Tim" rating={1} text="Batman v Superman...why make this movie" />
     </>
     
   )
