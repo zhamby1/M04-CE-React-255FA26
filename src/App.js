@@ -1,13 +1,23 @@
 
 import './App.css';
-const name = "Zach"
-const favorite_movie = "Star Wars"
+
+function Greeting(){
+  return(    
+      <p>Hello my name is Zach</p>
+  )
+}
+
+function Goodbye(){
+  return(
+    <p>Goodbye Everyone!</p>
+  )
+}
 
 function App(){
   return(
     <>
-      <p>Hello my name is {name}</p>
-      <p>My favorite movie is {favorite_movie}</p>
+      <Greeting />
+      <Goodbye />
     </>
     
   )
