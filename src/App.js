@@ -1,15 +1,25 @@
 
 import './App.css';
 //make sure to import review..look at Rating.js and Review.js for the other components
-import Review from './Review.js';
+
+function Greeting(props){
+  //when we have a event function..we can still put those inside of components.  They will just be a separate function inside of the component..this component will have a button that when clicked will say hello props.name
+  function helloClick(){
+    alert(`Hello, ${props.name}`)
+  }
+  return(
+    <button onClick={helloClick}>
+      Say Hello
+    </button>
+  )
+}
+
 
 function App(){
   //if passing numerical data surround it in the brackets
   return(
-    <>
-      <Review username="Zach" rating={5} text="Vison Quest was a great show in the MCU" />
-      <Review username="Tim" rating={1} text="Batman v Superman...why make this movie" />
-    </>
+
+    <Greeting name="Zach" />
     
   )
 
