@@ -1,34 +1,7 @@
 
 import './App.css';
-
-
-//we are going to create a component made up of other components (component composition)
-//we are going to make a movie review component that will be made up of its own internal reviews and a star rating
-//the star rating will be a separate component we use and we will use that in the Review component
-
-function Rating(props){
-  return(
-    <div>
-      {props.stars} / 5 stars
-    </div>
-  )
-}
-
-function Review(props){
-  return(
-    <div>
-      <h2>
-        Review by {props.username}
-      </h2>
-      <p>
-        <Rating stars={props.rating} />
-      </p>
-      <p>
-        {props.text}
-      </p>
-    </div>
-  )
-}
+//make sure to import review..look at Rating.js and Review.js for the other components
+import Review from './Review.js';
 
 function App(){
   //if passing numerical data surround it in the brackets
